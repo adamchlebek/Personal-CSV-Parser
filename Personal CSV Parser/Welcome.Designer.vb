@@ -39,7 +39,7 @@ Partial Class Welcome
         '
         Me.txtTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTitle.Location = New System.Drawing.Point(122, 133)
-        Me.txtTitle.MaxLength = 15
+        Me.txtTitle.MaxLength = 22
         Me.txtTitle.Name = "txtTitle"
         Me.txtTitle.Size = New System.Drawing.Size(228, 26)
         Me.txtTitle.TabIndex = 2
@@ -154,6 +154,10 @@ Partial Class Welcome
         Me.Controls.Add(Me.btnFindFile)
         Me.Controls.Add(Me.lblTitle)
         Me.Controls.Add(Me.txtTitle)
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(489, 374)
+        Me.MinimizeBox = False
+        Me.MinimumSize = New System.Drawing.Size(489, 374)
         Me.Name = "Welcome"
         Me.Text = "Welcome"
         Me.ResumeLayout(False)

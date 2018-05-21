@@ -1,6 +1,7 @@
 ﻿Public Class Welcome
     Dim ofd As New OpenFileDialog
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.CenterToScreen()
         btnFindFile.Left = (Me.ClientSize.Width / 2) - (btnFindFile.Width / 2)
         lblSeperator.Left = (Me.ClientSize.Width / 2) - (lblSeperator.Width / 2)
         lblTitle.Left = (Me.ClientSize.Width / 2) - (lblTitle.Width / 2)
