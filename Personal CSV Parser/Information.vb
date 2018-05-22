@@ -102,6 +102,7 @@ Public Class Information
     Private Sub btnRemove_Click(sender As Object, e As EventArgs) Handles btnRemove.Click
         var.headers.Remove(lbHeaders.SelectedItem)
         var.removedHeaders.Add(lbHeaders.SelectedItem)
+        indexReference()
 
         Try
             ListBox1.Items.Add(lbHeaders.SelectedItem)
@@ -112,15 +113,37 @@ Public Class Information
 
     End Sub
 
-    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        ListBox2.Items.Clear()
+    Public Sub UpdateList()
+        If var.removedBlank = False Then
+            For i As Integer = 1 To var.headersReference.Count()
+                If var.headersReference.Item(i - 1) = "" Then
+                    var.removedHeadersIndex.Add(i - 1)
+                End If
+                var.headers.Remove(var.removedHeadersIndex.Item(i - 1))
+            Next
+        End If
 
-        For i As Integer = 1 To var.removedHeaders.Count()
-            ListBox2.Items.Add(var.removedHeaders(i - 1))
-        Next
+        var.removedBlank = True
+
+        If var.removedBlank Then
+            For i As Integer = 1 To var.headers.Count()
+                ListBox2.Items.Add(var.headers.Item(i - 1))
+            Next
+        End If
+
+    End Sub
+
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnRemoveBlank.Click
+        UpdateList()
     End Sub
 
     Public Sub indexReference()
-
+        For Each head As String In var.removedHeaders
+            For i As Integer = 1 To var.headersReference.Count
+                If head.Equals(var.headersReference.Item(i - 1)) Then
+                    var.removedHeadersIndex.Add(i)
+                End If
+            Next
+        Next
     End Sub
 End Class

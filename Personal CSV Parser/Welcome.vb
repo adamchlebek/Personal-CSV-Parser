@@ -127,7 +127,7 @@ Public Class Welcome
             For i As Integer = 0 To var.columnCount
                 Try
                     If values(i) = Nothing Then
-                        values(i) = "$$$$$$"
+                        values(i) = ""
                     End If
 
                     var.headers.Add(values(i))

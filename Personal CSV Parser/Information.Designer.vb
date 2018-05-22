@@ -45,7 +45,7 @@ Partial Class Information
         Me.hdHeaders = New System.Windows.Forms.Label()
         Me.pnlHeaders = New System.Windows.Forms.Panel()
         Me.btnRemove = New System.Windows.Forms.Button()
-        Me.btnAdd = New System.Windows.Forms.Button()
+        Me.btnRemoveBlank = New System.Windows.Forms.Button()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.ListBox2 = New System.Windows.Forms.ListBox()
         Me.Panel1.SuspendLayout()
@@ -273,7 +273,7 @@ Partial Class Information
         Me.pnlHeaders.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pnlHeaders.Controls.Add(Me.ListBox2)
         Me.pnlHeaders.Controls.Add(Me.ListBox1)
-        Me.pnlHeaders.Controls.Add(Me.btnAdd)
+        Me.pnlHeaders.Controls.Add(Me.btnRemoveBlank)
         Me.pnlHeaders.Controls.Add(Me.btnRemove)
         Me.pnlHeaders.Controls.Add(Me.lbHeaders)
         Me.pnlHeaders.Location = New System.Drawing.Point(-1, 317)
@@ -292,14 +292,14 @@ Partial Class Information
         Me.btnRemove.UseVisualStyleBackColor = True
         Me.btnRemove.Visible = False
         '
-        'btnAdd
+        'btnRemoveBlank
         '
-        Me.btnAdd.Location = New System.Drawing.Point(19, 34)
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(75, 23)
-        Me.btnAdd.TabIndex = 27
-        Me.btnAdd.Text = "Add"
-        Me.btnAdd.UseVisualStyleBackColor = True
+        Me.btnRemoveBlank.Location = New System.Drawing.Point(19, 21)
+        Me.btnRemoveBlank.Name = "btnRemoveBlank"
+        Me.btnRemoveBlank.Size = New System.Drawing.Size(75, 49)
+        Me.btnRemoveBlank.TabIndex = 27
+        Me.btnRemoveBlank.Text = "Remove Blank"
+        Me.btnRemoveBlank.UseVisualStyleBackColor = True
         '
         'ListBox1
         '
@@ -365,7 +365,7 @@ Partial Class Information
     Friend WithEvents lbHeaders As ListBox
     Friend WithEvents hdHeaders As Label
     Friend WithEvents pnlHeaders As Panel
-    Friend WithEvents btnAdd As Button
+    Friend WithEvents btnRemoveBlank As Button
     Friend WithEvents btnRemove As Button
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents ListBox2 As ListBox
