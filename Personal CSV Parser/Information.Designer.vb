@@ -41,17 +41,25 @@ Partial Class Information
         Me.pnlRows = New System.Windows.Forms.Panel()
         Me.lblRowCount = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.lbHeaders = New System.Windows.Forms.ListBox()
+        Me.hdHeaders = New System.Windows.Forms.Label()
+        Me.pnlHeaders = New System.Windows.Forms.Panel()
+        Me.btnRemove = New System.Windows.Forms.Button()
+        Me.btnAdd = New System.Windows.Forms.Button()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.ListBox2 = New System.Windows.Forms.ListBox()
         Me.Panel1.SuspendLayout()
         Me.pnlFilePath.SuspendLayout()
         Me.ptnDateCreated.SuspendLayout()
         Me.pnlColumns.SuspendLayout()
         Me.pnlRows.SuspendLayout()
+        Me.pnlHeaders.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.ListBox1)
+        Me.Panel1.Controls.Add(Me.hdHeaders)
+        Me.Panel1.Controls.Add(Me.pnlHeaders)
         Me.Panel1.Controls.Add(Me.btnNo)
         Me.Panel1.Controls.Add(Me.btnYes)
         Me.Panel1.Controls.Add(Me.lblTitle)
@@ -67,12 +75,12 @@ Partial Class Information
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(429, 441)
+        Me.Panel1.Size = New System.Drawing.Size(429, 511)
         Me.Panel1.TabIndex = 0
         '
         'btnNo
         '
-        Me.btnNo.Location = New System.Drawing.Point(241, 299)
+        Me.btnNo.Location = New System.Drawing.Point(241, 449)
         Me.btnNo.Name = "btnNo"
         Me.btnNo.Size = New System.Drawing.Size(161, 51)
         Me.btnNo.TabIndex = 24
@@ -82,7 +90,7 @@ Partial Class Information
         '
         'btnYes
         '
-        Me.btnYes.Location = New System.Drawing.Point(25, 299)
+        Me.btnYes.Location = New System.Drawing.Point(25, 449)
         Me.btnYes.Name = "btnYes"
         Me.btnYes.Size = New System.Drawing.Size(161, 51)
         Me.btnYes.TabIndex = 23
@@ -190,7 +198,7 @@ Partial Class Information
         '
         Me.hdCorrect.AutoSize = True
         Me.hdCorrect.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.hdCorrect.Location = New System.Drawing.Point(102, 258)
+        Me.hdCorrect.Location = New System.Drawing.Point(103, 415)
         Me.hdCorrect.Name = "hdCorrect"
         Me.hdCorrect.Size = New System.Drawing.Size(237, 25)
         Me.hdCorrect.TabIndex = 22
@@ -199,7 +207,7 @@ Partial Class Information
         '
         'pbLoading
         '
-        Me.pbLoading.Location = New System.Drawing.Point(25, 201)
+        Me.pbLoading.Location = New System.Drawing.Point(25, 247)
         Me.pbLoading.Name = "pbLoading"
         Me.pbLoading.Size = New System.Drawing.Size(377, 23)
         Me.pbLoading.TabIndex = 21
@@ -239,24 +247,86 @@ Partial Class Information
         'Timer1
         '
         '
+        'lbHeaders
+        '
+        Me.lbHeaders.FormattingEnabled = True
+        Me.lbHeaders.Location = New System.Drawing.Point(100, 2)
+        Me.lbHeaders.Name = "lbHeaders"
+        Me.lbHeaders.Size = New System.Drawing.Size(69, 82)
+        Me.lbHeaders.TabIndex = 25
+        Me.lbHeaders.Visible = False
+        '
+        'hdHeaders
+        '
+        Me.hdHeaders.AutoSize = True
+        Me.hdHeaders.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.hdHeaders.Location = New System.Drawing.Point(180, 289)
+        Me.hdHeaders.Name = "hdHeaders"
+        Me.hdHeaders.Size = New System.Drawing.Size(86, 25)
+        Me.hdHeaders.TabIndex = 26
+        Me.hdHeaders.Text = "Headers"
+        Me.hdHeaders.Visible = False
+        '
+        'pnlHeaders
+        '
+        Me.pnlHeaders.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.pnlHeaders.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlHeaders.Controls.Add(Me.ListBox2)
+        Me.pnlHeaders.Controls.Add(Me.ListBox1)
+        Me.pnlHeaders.Controls.Add(Me.btnAdd)
+        Me.pnlHeaders.Controls.Add(Me.btnRemove)
+        Me.pnlHeaders.Controls.Add(Me.lbHeaders)
+        Me.pnlHeaders.Location = New System.Drawing.Point(-1, 317)
+        Me.pnlHeaders.Name = "pnlHeaders"
+        Me.pnlHeaders.Size = New System.Drawing.Size(435, 88)
+        Me.pnlHeaders.TabIndex = 27
+        Me.pnlHeaders.Visible = False
+        '
+        'btnRemove
+        '
+        Me.btnRemove.Location = New System.Drawing.Point(340, 34)
+        Me.btnRemove.Name = "btnRemove"
+        Me.btnRemove.Size = New System.Drawing.Size(75, 23)
+        Me.btnRemove.TabIndex = 26
+        Me.btnRemove.Text = "Remove"
+        Me.btnRemove.UseVisualStyleBackColor = True
+        Me.btnRemove.Visible = False
+        '
+        'btnAdd
+        '
+        Me.btnAdd.Location = New System.Drawing.Point(19, 34)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(75, 23)
+        Me.btnAdd.TabIndex = 27
+        Me.btnAdd.Text = "Add"
+        Me.btnAdd.UseVisualStyleBackColor = True
+        '
         'ListBox1
         '
         Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(159, 356)
+        Me.ListBox1.Location = New System.Drawing.Point(175, 2)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(120, 69)
-        Me.ListBox1.TabIndex = 25
+        Me.ListBox1.Size = New System.Drawing.Size(58, 82)
+        Me.ListBox1.TabIndex = 28
+        '
+        'ListBox2
+        '
+        Me.ListBox2.FormattingEnabled = True
+        Me.ListBox2.Location = New System.Drawing.Point(239, 1)
+        Me.ListBox2.Name = "ListBox2"
+        Me.ListBox2.Size = New System.Drawing.Size(58, 82)
+        Me.ListBox2.TabIndex = 29
         '
         'Information
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(429, 441)
+        Me.ClientSize = New System.Drawing.Size(429, 511)
         Me.Controls.Add(Me.Panel1)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(445, 480)
+        Me.MaximumSize = New System.Drawing.Size(445, 550)
         Me.MinimizeBox = False
-        Me.MinimumSize = New System.Drawing.Size(445, 480)
+        Me.MinimumSize = New System.Drawing.Size(445, 550)
         Me.Name = "Information"
         Me.Text = "Information"
         Me.Panel1.ResumeLayout(False)
@@ -269,6 +339,7 @@ Partial Class Information
         Me.pnlColumns.PerformLayout()
         Me.pnlRows.ResumeLayout(False)
         Me.pnlRows.PerformLayout()
+        Me.pnlHeaders.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -291,5 +362,11 @@ Partial Class Information
     Friend WithEvents Timer1 As Timer
     Friend WithEvents btnYes As Button
     Friend WithEvents btnNo As Button
+    Friend WithEvents lbHeaders As ListBox
+    Friend WithEvents hdHeaders As Label
+    Friend WithEvents pnlHeaders As Panel
+    Friend WithEvents btnAdd As Button
+    Friend WithEvents btnRemove As Button
     Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents ListBox2 As ListBox
 End Class

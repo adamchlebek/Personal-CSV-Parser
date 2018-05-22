@@ -26,6 +26,7 @@ Public Class Information
         lblTitle.Left = (Me.ClientSize.Width / 2) - (lblTitle.Width / 2)
         lblFilePath.Left = (Me.ClientSize.Width / 2) - (lblFilePath.Width / 2)
         lblDateCreated.Left = (Me.ClientSize.Width / 2) - (lblDateCreated.Width / 2)
+        hdHeaders.Left = (Me.ClientSize.Width / 2) - (hdHeaders.Width / 2)
 
         lblRowCount.Left = (Me.pnlRows.Width / 2) - (lblRowCount.Width / 2)
         lblColumnCount.Left = (Me.pnlColumns.Width / 2) - (lblColumnCount.Width / 2)
@@ -55,6 +56,9 @@ Public Class Information
         hdCorrect.Visible = True
         btnYes.Visible = True
         btnNo.Visible = True
+        hdHeaders.Visible = True
+        pnlHeaders.Visible = True
+        lbHeaders.Visible = True
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -72,22 +76,51 @@ Public Class Information
             pbLoading.Visible = False
             viewItems()
             addHeaders()
+            Timer1.Enabled = False
         End If
 
     End Sub
 
     Public Sub addHeaders()
-        For i As Integer = 0 To var.columnCount
+        For i As Integer = 1 To var.headers.Count()
             Try
-                ListBox1.Items.Add(var.headers.Item(i))
+                lbHeaders.Items.Add(var.headers.Item(i - 1))
             Catch ex As Exception
 
             End Try
-
         Next
     End Sub
 
     Private Sub btnNo_Click(sender As Object, e As EventArgs) Handles btnNo.Click
+
+    End Sub
+
+    Private Sub lbHeaders_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbHeaders.SelectedIndexChanged
+        btnRemove.Visible = True
+    End Sub
+
+    Private Sub btnRemove_Click(sender As Object, e As EventArgs) Handles btnRemove.Click
+        var.headers.Remove(lbHeaders.SelectedItem)
+        var.removedHeaders.Add(lbHeaders.SelectedItem)
+
+        Try
+            ListBox1.Items.Add(lbHeaders.SelectedItem)
+            lbHeaders.Items.Remove(lbHeaders.SelectedItem)
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        ListBox2.Items.Clear()
+
+        For i As Integer = 1 To var.removedHeaders.Count()
+            ListBox2.Items.Add(var.removedHeaders(i - 1))
+        Next
+    End Sub
+
+    Public Sub indexReference()
 
     End Sub
 End Class

@@ -9,4 +9,6 @@
     Public Shared columnCount As Integer
 
     Public Shared headers As List(Of String) = New List(Of String)()
+    Public Shared headersReference As List(Of String) = New List(Of String)()
+    Public Shared removedHeaders As List(Of String) = New List(Of String)()
 End Class

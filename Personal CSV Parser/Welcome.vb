@@ -123,6 +123,7 @@ Public Class Welcome
         Using reader = New StreamReader(var.filePath)
             Dim line = reader.ReadLine()
             Dim values = line.Split(var.separatorChar)
+
             For i As Integer = 0 To var.columnCount
                 Try
                     If values(i) = Nothing Then
@@ -135,6 +136,8 @@ Public Class Welcome
                 End Try
             Next
         End Using
+
+        var.headersReference.AddRange(var.headers)
     End Sub
 
     Public Sub getSeparator()
