@@ -5,4 +5,8 @@
     Public Shared generateHeaders As Boolean
 
     Public Shared creationTime As DateTime
+    Public Shared rowCount As Integer
+    Public Shared columnCount As Integer
+
+    Public Shared headers As List(Of String) = New List(Of String)()
 End Class

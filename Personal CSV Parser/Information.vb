@@ -5,6 +5,7 @@ Public Class Information
     Private Sub Information_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Enabled = True
         Me.CenterToScreen()
+
     End Sub
 
     Function findFileCreation()
@@ -12,9 +13,12 @@ Public Class Information
         Return var.creationTime
     End Function
 
+
     Public Sub viewItems()
         lblTitle.Text = var.title
         lblFilePath.Text = var.filePath
+        lblRowCount.Text = var.rowCount
+        lblColumnCount.Text = var.columnCount
         lblDateCreated.Text = findFileCreation()
 
         hdDateCreated.Left = (Me.ClientSize.Width / 2) - (hdDateCreated.Width / 2) + 1
@@ -67,7 +71,23 @@ Public Class Information
         If finished Then
             pbLoading.Visible = False
             viewItems()
+            addHeaders()
         End If
+
+    End Sub
+
+    Public Sub addHeaders()
+        For i As Integer = 0 To var.columnCount
+            Try
+                ListBox1.Items.Add(var.headers.Item(i))
+            Catch ex As Exception
+
+            End Try
+
+        Next
+    End Sub
+
+    Private Sub btnNo_Click(sender As Object, e As EventArgs) Handles btnNo.Click
 
     End Sub
 End Class

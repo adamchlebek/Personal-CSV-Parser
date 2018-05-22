@@ -24,6 +24,8 @@ Partial Class Information
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnNo = New System.Windows.Forms.Button()
+        Me.btnYes = New System.Windows.Forms.Button()
         Me.lblTitle = New System.Windows.Forms.Label()
         Me.hdDateCreated = New System.Windows.Forms.Label()
         Me.pnlFilePath = New System.Windows.Forms.Panel()
@@ -39,8 +41,7 @@ Partial Class Information
         Me.pnlRows = New System.Windows.Forms.Panel()
         Me.lblRowCount = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.btnYes = New System.Windows.Forms.Button()
-        Me.btnNo = New System.Windows.Forms.Button()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.Panel1.SuspendLayout()
         Me.pnlFilePath.SuspendLayout()
         Me.ptnDateCreated.SuspendLayout()
@@ -50,6 +51,7 @@ Partial Class Information
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.ListBox1)
         Me.Panel1.Controls.Add(Me.btnNo)
         Me.Panel1.Controls.Add(Me.btnYes)
         Me.Panel1.Controls.Add(Me.lblTitle)
@@ -67,6 +69,26 @@ Partial Class Information
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(429, 441)
         Me.Panel1.TabIndex = 0
+        '
+        'btnNo
+        '
+        Me.btnNo.Location = New System.Drawing.Point(241, 299)
+        Me.btnNo.Name = "btnNo"
+        Me.btnNo.Size = New System.Drawing.Size(161, 51)
+        Me.btnNo.TabIndex = 24
+        Me.btnNo.Text = "No"
+        Me.btnNo.UseVisualStyleBackColor = True
+        Me.btnNo.Visible = False
+        '
+        'btnYes
+        '
+        Me.btnYes.Location = New System.Drawing.Point(25, 299)
+        Me.btnYes.Name = "btnYes"
+        Me.btnYes.Size = New System.Drawing.Size(161, 51)
+        Me.btnYes.TabIndex = 23
+        Me.btnYes.Text = "Yes"
+        Me.btnYes.UseVisualStyleBackColor = True
+        Me.btnYes.Visible = False
         '
         'lblTitle
         '
@@ -160,15 +182,15 @@ Partial Class Information
         Me.lblColumnCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblColumnCount.Location = New System.Drawing.Point(60, 11)
         Me.lblColumnCount.Name = "lblColumnCount"
-        Me.lblColumnCount.Size = New System.Drawing.Size(32, 17)
+        Me.lblColumnCount.Size = New System.Drawing.Size(16, 17)
         Me.lblColumnCount.TabIndex = 3
-        Me.lblColumnCount.Text = "100"
+        Me.lblColumnCount.Text = "0"
         '
         'hdCorrect
         '
         Me.hdCorrect.AutoSize = True
         Me.hdCorrect.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.hdCorrect.Location = New System.Drawing.Point(102, 290)
+        Me.hdCorrect.Location = New System.Drawing.Point(102, 258)
         Me.hdCorrect.Name = "hdCorrect"
         Me.hdCorrect.Size = New System.Drawing.Size(237, 25)
         Me.hdCorrect.TabIndex = 22
@@ -210,32 +232,20 @@ Partial Class Information
         Me.lblRowCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblRowCount.Location = New System.Drawing.Point(59, 11)
         Me.lblRowCount.Name = "lblRowCount"
-        Me.lblRowCount.Size = New System.Drawing.Size(32, 17)
+        Me.lblRowCount.Size = New System.Drawing.Size(16, 17)
         Me.lblRowCount.TabIndex = 2
-        Me.lblRowCount.Text = "100"
+        Me.lblRowCount.Text = "0"
         '
         'Timer1
         '
         '
-        'btnYes
+        'ListBox1
         '
-        Me.btnYes.Location = New System.Drawing.Point(25, 331)
-        Me.btnYes.Name = "btnYes"
-        Me.btnYes.Size = New System.Drawing.Size(161, 51)
-        Me.btnYes.TabIndex = 23
-        Me.btnYes.Text = "Yes"
-        Me.btnYes.UseVisualStyleBackColor = True
-        Me.btnYes.Visible = False
-        '
-        'btnNo
-        '
-        Me.btnNo.Location = New System.Drawing.Point(241, 331)
-        Me.btnNo.Name = "btnNo"
-        Me.btnNo.Size = New System.Drawing.Size(161, 51)
-        Me.btnNo.TabIndex = 24
-        Me.btnNo.Text = "No"
-        Me.btnNo.UseVisualStyleBackColor = True
-        Me.btnNo.Visible = False
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.Location = New System.Drawing.Point(159, 356)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(120, 69)
+        Me.ListBox1.TabIndex = 25
         '
         'Information
         '
@@ -281,4 +291,5 @@ Partial Class Information
     Friend WithEvents Timer1 As Timer
     Friend WithEvents btnYes As Button
     Friend WithEvents btnNo As Button
+    Friend WithEvents ListBox1 As ListBox
 End Class
